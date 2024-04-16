@@ -1,16 +1,14 @@
 import { Component, AfterViewInit } from '@angular/core';
 import jQuery  from 'jquery';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements AfterViewInit {
-
-
   ngAfterViewInit(): void {
-
     (function ($) {
       'use strict';
 
@@ -28,7 +26,10 @@ export class AppComponent implements AfterViewInit {
         $('body').toggleClass('sb-sidenav-toggled');
       });
     })(jQuery);
-
   }
+
+
+
+
 
 }
