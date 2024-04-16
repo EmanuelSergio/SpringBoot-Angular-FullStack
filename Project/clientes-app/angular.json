@@ -7,13 +7,20 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "standalone": false
+          "standalone": false,
+          "skipTests": true
         },
         "@schematics/angular:directive": {
           "standalone": false
         },
         "@schematics/angular:pipe": {
           "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -35,9 +42,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -106,5 +117,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a84d5da3-24fb-451f-8573-d3a3b3378b80"
   }
 }
