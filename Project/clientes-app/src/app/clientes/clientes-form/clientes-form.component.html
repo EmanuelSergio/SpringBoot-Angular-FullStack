@@ -1,1 +1,50 @@
-<p>clientes-form works!</p>
+ <h1 class="mt-4">Clientes</h1>
+   <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Cadastro</li>
+   </ol>
+
+   <div class="container">
+    <form>
+      {{cliente.nome}}
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+                <label>ID:</label>
+                <input type="text" class="form-control" disabled="true"  [ngModel]="cliente.id" name="id"/>
+            </div>
+          </div>
+
+           <div class="col-md-6">
+            <div class="form-group">
+                <label>Data cadastro:</label>
+                <input type="text" class="form-control" disabled="true" name="dataCadastro" [ngModel]="cliente.dataCadastro"/>
+            </div>
+          </div>
+
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+                <label>Nome: *</label>
+                <input type="text" class="form-control" name="nome" [(ngModel)]="cliente.nome" name="nome"/>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+                <label>CPF: *</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf"/>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-success" (click)="clicar()">
+            <i class="fa fa-save"></i> Salvar
+          </button>
+        </div>
+      </div>
+    </form>
+
+   </div>
