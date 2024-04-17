@@ -19,7 +19,8 @@ import { ClientesListaComponent } from './clientes-lista/clientes-lista.componen
 
   ],
   exports: [
-    ClientesFormComponent
+    ClientesFormComponent,
+    ClientesListaComponent
   ]
 })
 export class ClientesModule { }
