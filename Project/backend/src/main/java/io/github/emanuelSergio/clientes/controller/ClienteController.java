@@ -9,8 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/clientes")
+@CrossOrigin("http://localhost:4200")
 public class ClienteController {
 
     @Autowired
@@ -22,9 +25,13 @@ public class ClienteController {
         return repository.save(cliente);
     }
 
+    @GetMapping
+    public List<Cliente> obterTodos(){
+        return repository.findAll();
+    }
+
     @GetMapping("{id}")
     public Cliente acharPorId(@PathVariable Integer id){
-
 
         //aqui vai achar o usuario pelo Id ou vai lançar a exceção, por isso a função lambda chamando o status
         return repository
