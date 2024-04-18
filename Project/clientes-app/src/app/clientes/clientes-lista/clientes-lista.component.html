@@ -6,6 +6,18 @@
 <div class="container">
 
   <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-success" role="alert" *ngIf="mensagemSucesso">
+            {{ mensagemSucesso }}
+          </div>
+
+          <div class="alert alert-danger" role="alert" *ngIf="mensagemErro">
+            {{ mensagemErro }}
+          </div>
+        </div>
+      </div>
+
+  <div class="row">
     <div class="col-md-2">
       <button class="btn btn-warning" (click)="novoCadastro()">
         <i class="fa fa-plus"></i> Novo
@@ -60,8 +72,8 @@
           </div>
 
           <div class="modal-footer">
-            <button class="btn btn-danger">Confirma</button>
-            <button class="btn btn-success" data-dismiss="modal">Cancela</button>
+            <button class="btn btn-danger"  (click)="deletarCliente()" data-dismiss="modal">Confirmar</button>
+            <button class="btn btn-success" data-dismiss="modal">Cancelar</button>
           </div>
         </div>
     </div>
