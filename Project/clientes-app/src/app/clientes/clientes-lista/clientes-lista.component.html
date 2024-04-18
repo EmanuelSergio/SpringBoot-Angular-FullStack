@@ -38,11 +38,34 @@
                 <i class="fa fa-edit"></i>
               </button>
 
+              <button class="btn btn-danger ml-1" data-toggle="modal" data-target="#modalDelecao" (click)="preparaDelecao(cliente)">
+                <i class="fa fa-trash"></i>
+              </button>
+
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+
+  <div id="modalDelecao" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>confirma ai</h4>
+          </div>
+          <div class="modal-body">
+            Confirmação a deleção do(a) Cliente {{clienteSelecionado?.nome}}?
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-danger">Confirma</button>
+            <button class="btn btn-success" data-dismiss="modal">Cancela</button>
+          </div>
+        </div>
+    </div>
+  </div>
+
 
 </div>
