@@ -1,5 +1,6 @@
 package io.github.emanuelSergio.clientes.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -25,6 +26,7 @@ public class ServicoPrestado {
     private BigDecimal valor;
 
     @Column
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate data;
 
 }
