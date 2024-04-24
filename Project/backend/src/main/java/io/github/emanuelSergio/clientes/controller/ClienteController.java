@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/clientes")
-@CrossOrigin("http://localhost:4200")
 public class ClienteController {
 
     @Autowired
@@ -22,7 +21,7 @@ public class ClienteController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)//RETORNA O CODIGO DE STATUS EX:200, 404
     public Cliente salvar(@RequestBody @Valid Cliente cliente){ //para realmente salvar é necessario essas duas anotatios
-        return repository.save(cliente);
+         return repository.save(cliente);
     }
 
     @GetMapping

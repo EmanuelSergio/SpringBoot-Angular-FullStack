@@ -9,7 +9,7 @@
       <div class="col-md-12">
         <div class="form-group">
           <label>Cliente:</label>
-          <select class="form-control">
+          <select class="form-control" [(ngModel)]="servico.idCliente" [ngModelOptions]="{standalone: true}">
             <option value="">Selecione</option>
             <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
               {{cliente.nome}}
@@ -18,5 +18,59 @@
         </div>
       </div>
     </div>
+
+     <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-success" role="alert" *ngIf="success == true">
+            Serviço prestado salvo com sucesso
+          </div>
+          <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+            {{erro}}
+          </div>
+        </div>
+      </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Descrição:</label>
+          <input class="form-control" type="text" name="Descrição" id="inputDescricao" [(ngModel)]="servico.descricao">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Data:</label>
+          <input class="form-control" type="text" name="data" id="inputData" [(ngModel)]="servico.data">
+        </div>
+      </div>
+
+
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Preço:</label>
+          <input class="form-control" type="text" name="preco" id="inputPreco" [(ngModel)]="servico.preco">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-3">
+        <button class="btn btn-success">
+          <i class="fa fa-save"></i>
+          Salvar</button>
+
+          <button class="btn btn-danger ml-2" routerLink="/servico-prestado-listagem">
+          <i class="fa fa-arrow-alt-circle-left"></i>
+          Voltar</button>
+      </div>
+    </div>
+
   </form>
+
 </div>
