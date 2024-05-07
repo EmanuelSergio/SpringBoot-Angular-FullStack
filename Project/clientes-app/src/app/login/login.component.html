@@ -7,12 +7,12 @@
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                   <div class="card-header">
                     <h3 class="text-center font-weight-light my-4">
-                      {{ cadastrando ? 'Cadastro de novo Usuário' : 'Entrar' }}
+                      Entrar
                     </h3>
                   </div>
 
                   <div class="card-body">
-                    <div class="alert alert-danger" *ngIf="loginError">
+                    <div class="alert alert-danger">
                       Login e/ou Senha incorreto(a)
                     </div>
 
@@ -29,33 +29,15 @@
                         [(ngModel)]="password" class="form-control py-4" placeholder="digite sua senha">
                       </div>
 
-                    <div class="form-group align-items-center justify-content-between mt-4 mb-0" >
-                      <button type="submit" class="btn btn-primary" *ngIf="!cadastrando">
+                    <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                      <button type="submit" class="btn btn-primary">
                         Enviar
-                      </button>
-
-                      <button type="button" class="btn btn-success" *ngIf="cadastrando">
-                        Cadastrar
-                      </button>
-
-                      <button type="button" (click)="cancelarCadastrar()" class="btn btn-danger ml-2" *ngIf="cadastrando">
-                        cancelar
                       </button>
                     </div>
 
                   </form>
 
                   </div>
-
-                <div class="card-footer text-center">
-                  <div class="small">
-                    <a href="#" (click)="preparandoCadastrar($event)">
-                      Não possui Usuário? Cadastre-se!
-                    </a>
-                  </div>
-
-                </div>
-
 
                 </div>
               </div>
